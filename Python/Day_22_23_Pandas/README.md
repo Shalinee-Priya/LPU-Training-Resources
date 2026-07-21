@@ -5,7 +5,6 @@
 Learn how to manipulate, clean, analyze, and explore structured data using the Pandas library.
 
 ---
-
 ## Topics Covered
 
 ### Introduction
