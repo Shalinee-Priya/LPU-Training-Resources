@@ -1,0 +1,181 @@
+OrderDate,Region,Store,Product,Category,Units,Revenue
+2026-01-07,East,Patna,Desk Lamp,Electronics,1,900
+2026-01-07,North,Chandigarh,Desk Lamp,Electronics,4,600
+2026-01-09,North,Chandigarh,Desk Lamp,Electronics,15,18000
+2026-01-11,East,Patna,Backpack,Accessories,19,2850
+2026-01-12,West,Mumbai,Pen Set,Stationery,6,7200
+2026-01-12,South,Chennai,Notebook,Stationery,19,7600
+2026-01-13,South,Chennai,Headphones,Electronics,9,3600
+2026-01-13,West,Pune,Desk Lamp,Electronics,3,750
+2026-01-14,East,Patna,Desk Lamp,Electronics,1,600
+2026-01-14,East,Kolkata,Notebook,Stationery,20,24000
+2026-01-14,East,Kolkata,Backpack,Accessories,7,1050
+2026-01-16,West,Mumbai,Backpack,Accessories,18,16200
+2026-01-19,West,Mumbai,Pen Set,Stationery,11,13200
+2026-01-21,South,Bengaluru,Notebook,Stationery,15,18000
+2026-01-24,North,Delhi,Desk Lamp,Electronics,1,250
+2026-01-25,East,Patna,Headphones,Electronics,21,18900
+2026-01-26,West,Pune,Pen Set,Stationery,4,1600
+2026-01-28,West,Pune,Headphones,Electronics,12,14400
+2026-01-29,East,Patna,Backpack,Accessories,22,5500
+2026-01-29,East,Kolkata,Desk Lamp,Electronics,14,16800
+2026-01-29,South,Chennai,Notebook,Stationery,23,5750
+2026-01-30,South,Chennai,Water Bottle,Accessories,7,8400
+2026-01-31,North,Chandigarh,Pen Set,Stationery,2,500
+2026-02-02,West,Mumbai,Headphones,Electronics,21,18900
+2026-02-03,East,Patna,Notebook,Stationery,10,9000
+2026-02-04,East,Patna,Pen Set,Stationery,18,2700
+2026-02-05,West,Pune,Desk Lamp,Electronics,19,17100
+2026-02-05,East,Kolkata,Notebook,Stationery,5,2000
+2026-02-06,West,Pune,Water Bottle,Accessories,3,2700
+2026-02-06,West,Pune,Notebook,Stationery,22,8800
+2026-02-10,South,Chennai,Backpack,Accessories,7,2800
+2026-02-10,North,Delhi,Notebook,Stationery,9,3600
+2026-02-11,East,Patna,Notebook,Stationery,18,16200
+2026-02-14,West,Mumbai,Desk Lamp,Electronics,12,10800
+2026-02-14,West,Mumbai,Notebook,Stationery,21,18900
+2026-02-14,South,Bengaluru,Backpack,Accessories,9,8100
+2026-02-14,North,Delhi,Headphones,Electronics,21,18900
+2026-02-15,West,Pune,Backpack,Accessories,20,3000
+2026-02-16,North,Delhi,Notebook,Stationery,6,3600
+2026-02-16,West,Pune,Pen Set,Stationery,18,10800
+2026-02-18,North,Delhi,Water Bottle,Accessories,10,12000
+2026-02-18,West,Pune,Pen Set,Stationery,10,12000
+2026-02-20,East,Kolkata,Desk Lamp,Electronics,9,10800
+2026-02-20,East,Patna,Notebook,Stationery,4,3600
+2026-02-21,North,Delhi,Pen Set,Stationery,11,13200
+2026-02-22,South,Bengaluru,Backpack,Accessories,16,19200
+2026-02-22,South,Chennai,Backpack,Accessories,16,14400
+2026-02-22,North,Chandigarh,Pen Set,Stationery,5,6000
+2026-02-22,East,Kolkata,Water Bottle,Accessories,6,3600
+2026-02-22,North,Chandigarh,Desk Lamp,Electronics,6,2400
+2026-02-24,East,Kolkata,Notebook,Stationery,3,1200
+2026-02-25,West,Mumbai,Backpack,Accessories,1,250
+2026-02-25,North,Chandigarh,Pen Set,Stationery,10,1500
+2026-02-26,East,Patna,Water Bottle,Accessories,10,9000
+2026-02-26,East,Patna,Headphones,Electronics,5,1250
+2026-02-27,North,Chandigarh,Water Bottle,Accessories,24,14400
+2026-02-27,South,Bengaluru,Pen Set,Stationery,12,10800
+2026-02-27,West,Mumbai,Pen Set,Stationery,5,1250
+2026-03-02,South,Bengaluru,Water Bottle,Accessories,13,15600
+2026-03-02,West,Pune,Backpack,Accessories,3,3600
+2026-03-03,South,Bengaluru,Water Bottle,Accessories,8,9600
+2026-03-04,West,Mumbai,Desk Lamp,Electronics,16,2400
+2026-03-05,East,Patna,Desk Lamp,Electronics,18,4500
+2026-03-07,West,Mumbai,Water Bottle,Accessories,4,2400
+2026-03-08,West,Pune,Headphones,Electronics,5,4500
+2026-03-08,South,Chennai,Headphones,Electronics,10,9000
+2026-03-09,South,Bengaluru,Headphones,Electronics,14,3500
+2026-03-09,West,Mumbai,Water Bottle,Accessories,3,3600
+2026-03-09,East,Kolkata,Notebook,Stationery,7,6300
+2026-03-09,East,Kolkata,Backpack,Accessories,8,7200
+2026-03-10,North,Delhi,Pen Set,Stationery,3,3600
+2026-03-10,East,Kolkata,Desk Lamp,Electronics,5,6000
+2026-03-10,North,Chandigarh,Desk Lamp,Electronics,4,1600
+2026-03-10,West,Pune,Headphones,Electronics,3,2700
+2026-03-10,South,Chennai,Pen Set,Stationery,20,5000
+2026-03-11,South,Bengaluru,Headphones,Electronics,21,12600
+2026-03-12,North,Chandigarh,Water Bottle,Accessories,5,1250
+2026-03-13,West,Mumbai,Notebook,Stationery,18,16200
+2026-03-13,West,Mumbai,Pen Set,Stationery,13,3250
+2026-03-15,West,Pune,Notebook,Stationery,18,10800
+2026-03-17,East,Kolkata,Headphones,Electronics,19,17100
+2026-03-17,South,Chennai,Pen Set,Stationery,8,3200
+2026-03-17,South,Bengaluru,Pen Set,Stationery,24,21600
+2026-03-18,East,Patna,Notebook,Stationery,1,250
+2026-03-18,West,Mumbai,Headphones,Electronics,21,5250
+2026-03-19,North,Chandigarh,Notebook,Stationery,19,17100
+2026-03-22,North,Delhi,Pen Set,Stationery,11,2750
+2026-03-22,East,Kolkata,Headphones,Electronics,18,7200
+2026-03-22,North,Chandigarh,Backpack,Accessories,6,7200
+2026-03-24,North,Chandigarh,Notebook,Stationery,3,2700
+2026-03-25,North,Chandigarh,Pen Set,Stationery,9,8100
+2026-03-25,East,Kolkata,Headphones,Electronics,15,3750
+2026-03-25,South,Bengaluru,Pen Set,Stationery,17,2550
+2026-03-27,South,Bengaluru,Headphones,Electronics,20,8000
+2026-03-27,East,Kolkata,Pen Set,Stationery,11,6600
+2026-03-29,North,Delhi,Desk Lamp,Electronics,17,15300
+2026-03-30,West,Mumbai,Water Bottle,Accessories,18,10800
+2026-03-30,South,Chennai,Desk Lamp,Electronics,4,2400
+2026-03-30,South,Bengaluru,Water Bottle,Accessories,19,11400
+2026-03-31,East,Patna,Desk Lamp,Electronics,4,1000
+2026-04-01,South,Chennai,Notebook,Stationery,2,2400
+2026-04-02,East,Patna,Headphones,Electronics,23,3450
+2026-04-02,West,Mumbai,Notebook,Stationery,8,3200
+2026-04-04,South,Bengaluru,Headphones,Electronics,13,1950
+2026-04-05,North,Chandigarh,Pen Set,Stationery,2,2400
+2026-04-06,South,Bengaluru,Water Bottle,Accessories,5,2000
+2026-04-08,East,Patna,Headphones,Electronics,20,3000
+2026-04-09,South,Chennai,Pen Set,Stationery,24,9600
+2026-04-11,North,Delhi,Notebook,Stationery,3,1200
+2026-04-11,North,Delhi,Water Bottle,Accessories,18,4500
+2026-04-13,North,Chandigarh,Pen Set,Stationery,15,18000
+2026-04-15,North,Delhi,Desk Lamp,Electronics,11,1650
+2026-04-15,North,Chandigarh,Pen Set,Stationery,16,2400
+2026-04-15,South,Bengaluru,Desk Lamp,Electronics,7,1050
+2026-04-16,West,Mumbai,Headphones,Electronics,21,18900
+2026-04-18,East,Kolkata,Water Bottle,Accessories,11,9900
+2026-04-22,West,Pune,Desk Lamp,Electronics,5,3000
+2026-04-24,West,Mumbai,Backpack,Accessories,24,3600
+2026-04-25,South,Bengaluru,Water Bottle,Accessories,8,1200
+2026-04-25,South,Bengaluru,Headphones,Electronics,5,1250
+2026-04-26,South,Chennai,Headphones,Electronics,10,6000
+2026-04-26,North,Delhi,Headphones,Electronics,11,1650
+2026-04-26,North,Delhi,Backpack,Accessories,1,600
+2026-04-28,North,Delhi,Desk Lamp,Electronics,21,18900
+2026-04-29,South,Chennai,Water Bottle,Accessories,17,15300
+2026-04-30,East,Patna,Notebook,Stationery,24,9600
+2026-05-02,North,Chandigarh,Backpack,Accessories,7,1050
+2026-05-02,South,Bengaluru,Desk Lamp,Electronics,23,27600
+2026-05-03,North,Chandigarh,Water Bottle,Accessories,22,13200
+2026-05-03,North,Delhi,Water Bottle,Accessories,2,800
+2026-05-04,East,Patna,Water Bottle,Accessories,10,1500
+2026-05-07,West,Pune,Backpack,Accessories,22,19800
+2026-05-08,West,Mumbai,Notebook,Stationery,3,750
+2026-05-08,East,Kolkata,Backpack,Accessories,14,8400
+2026-05-09,West,Pune,Water Bottle,Accessories,22,26400
+2026-05-12,North,Chandigarh,Water Bottle,Accessories,5,4500
+2026-05-14,West,Mumbai,Pen Set,Stationery,19,22800
+2026-05-16,South,Bengaluru,Headphones,Electronics,16,9600
+2026-05-16,South,Bengaluru,Water Bottle,Accessories,9,1350
+2026-05-17,West,Pune,Pen Set,Stationery,16,19200
+2026-05-19,North,Delhi,Notebook,Stationery,13,15600
+2026-05-19,South,Bengaluru,Pen Set,Stationery,5,3000
+2026-05-19,East,Patna,Pen Set,Stationery,11,9900
+2026-05-19,South,Chennai,Notebook,Stationery,23,9200
+2026-05-20,East,Kolkata,Pen Set,Stationery,12,4800
+2026-05-22,West,Pune,Pen Set,Stationery,13,7800
+2026-05-23,West,Pune,Headphones,Electronics,23,3450
+2026-05-25,East,Patna,Notebook,Stationery,20,18000
+2026-05-25,South,Bengaluru,Notebook,Stationery,23,13800
+2026-05-26,West,Pune,Water Bottle,Accessories,5,4500
+2026-05-26,East,Kolkata,Notebook,Stationery,9,2250
+2026-05-28,West,Mumbai,Headphones,Electronics,11,2750
+2026-05-28,South,Bengaluru,Notebook,Stationery,22,3300
+2026-05-29,East,Patna,Desk Lamp,Electronics,21,5250
+2026-05-29,East,Patna,Notebook,Stationery,19,4750
+2026-05-29,North,Delhi,Headphones,Electronics,18,21600
+2026-05-29,South,Chennai,Backpack,Accessories,11,2750
+2026-05-30,East,Patna,Desk Lamp,Electronics,4,2400
+2026-05-30,North,Chandigarh,Backpack,Accessories,10,12000
+2026-06-02,West,Pune,Notebook,Stationery,7,1750
+2026-06-03,East,Kolkata,Desk Lamp,Electronics,11,13200
+2026-06-04,South,Chennai,Headphones,Electronics,2,1800
+2026-06-04,West,Pune,Pen Set,Stationery,2,800
+2026-06-04,East,Kolkata,Water Bottle,Accessories,20,12000
+2026-06-05,North,Chandigarh,Water Bottle,Accessories,23,13800
+2026-06-08,East,Patna,Pen Set,Stationery,18,10800
+2026-06-09,West,Pune,Headphones,Electronics,23,13800
+2026-06-09,East,Kolkata,Water Bottle,Accessories,14,2100
+2026-06-10,South,Bengaluru,Pen Set,Stationery,11,13200
+2026-06-10,North,Delhi,Desk Lamp,Electronics,21,12600
+2026-06-11,South,Bengaluru,Water Bottle,Accessories,14,12600
+2026-06-16,North,Chandigarh,Desk Lamp,Electronics,13,5200
+2026-06-16,East,Kolkata,Water Bottle,Accessories,4,600
+2026-06-18,East,Kolkata,Pen Set,Stationery,19,4750
+2026-06-20,West,Mumbai,Notebook,Stationery,1,1200
+2026-06-23,East,Patna,Water Bottle,Accessories,6,2400
+2026-06-23,West,Pune,Desk Lamp,Electronics,22,13200
+2026-06-24,North,Delhi,Water Bottle,Accessories,24,6000
+2026-06-28,East,Patna,Backpack,Accessories,23,9200
+2026-06-29,North,Chandigarh,Water Bottle,Accessories,19,17100
