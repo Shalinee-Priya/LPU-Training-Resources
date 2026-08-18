@@ -47,13 +47,13 @@ After completing this module, you will be able to:
 Day-01_SQL_Introduction/
 │
 ├── README.md
-├── 01_SQL_Day1_Slides.pdf
+├── 01_SQL_Day1_Slides.pptx
 └── 02_SQL_Day1_Script.sql
 ```
 
 | File | Description |
 |------|-------------|
-| **01_SQL_Day1_Slides.pdf** | Classroom presentation with concepts and visuals |
+| **01_SQL_Day1_Slides.pptx** | Classroom presentation with concepts and visuals |
 | **02_SQL_Day1_Script.sql** | Executable SQL script with explanations and practice questions |
 | **README.md** | Day 1 overview and learning guide |
 
