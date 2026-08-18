@@ -55,7 +55,7 @@ After completing this module, you will be able to:
 ```text
 DAY_02_Data_Retrieval_And_Filtering/
 │
-├── 01_SQL_Day2_Slides.pdf
+├── 01_SQL_Day2_Slides.pptx
 ├── 02_SQL_Day2_Script.sql
 ├── 03_SQL_Basics_Practical_Warmup.pdf
 └── README.md
@@ -63,7 +63,7 @@ DAY_02_Data_Retrieval_And_Filtering/
 
 | File | Description |
 |------|-------------|
-| **01_SQL_Day2_Slides.pdf** | Classroom presentation covering data retrieval and filtering concepts |
+| **01_SQL_Day2_Slides.pptx** | Classroom presentation covering data retrieval and filtering concepts |
 | **02_SQL_Day2_Script.sql** | Executable SQL script with explanations, examples, and practice queries |
 | **03_SQL_Basics_Practical_Warmup.pdf** | Revision worksheet with verbal questions, practical tasks, debugging, and mini challenges |
 | **README.md** | Module overview and learning guide |
@@ -94,7 +94,7 @@ Before starting Day 2, you should be familiar with:
 ## How to Use
 
 1. Complete the **Practical Warm-up** for Day 1 revision.
-2. Study the presentation (`01_SQL_Day2_Slides.pdf`).
+2. Study the presentation (`01_SQL_Day2_Slides.pptx`).
 3. Execute the SQL script sequentially in MySQL Workbench.
 4. Predict outputs before running each query.
 5. Solve the Mini Challenge independently without viewing solutions.
