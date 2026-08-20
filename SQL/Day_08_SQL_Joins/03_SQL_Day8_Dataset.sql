@@ -2,7 +2,15 @@
 -- SQL Day 8 Dataset : E-commerce Database
 -- Author : Shalinee Priya
 -- Module : SQL JOINS
--- Description : Reusable dataset for Day 8 and later modules.
+-- Description : Reusable dataset for Day 8 and later modules (Day 9 Subqueries,
+--               Day 10 Views, ...). This is the single source of truth for the
+--               five tables used across this module chain — later modules
+--               SOURCE this file and must never ALTER the tables it creates.
+--
+-- v2 NOTE: Suppliers.city and Orders.order_date are included from the start
+-- (previously bolted on later by Day 9 via ALTER TABLE). Baking them in here
+-- means every downstream module reads a finalized schema and no module has to
+-- mutate a prior module's tables to teach its own content.
 -- =============================================================================
 
 DROP DATABASE IF EXISTS joins_db;
@@ -19,7 +27,8 @@ CREATE TABLE Customers (
 CREATE TABLE Suppliers (
     supplier_id INT PRIMARY KEY,
     supplier_name VARCHAR(100),
-    phone VARCHAR(15)
+    phone VARCHAR(15),
+    city VARCHAR(50)
 );
 
 CREATE TABLE Products (
@@ -34,6 +43,7 @@ CREATE TABLE Products (
 CREATE TABLE Orders (
     order_id INT PRIMARY KEY,
     customer_id INT,
+    order_date DATE,
     FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 );
 
@@ -62,15 +72,16 @@ INSERT INTO Customers VALUES
 (113,'Harsh Kumar','9876543222','Delhi'),
 (114,'Nikita Sharma','9876543223','Mumbai');
 
+-- Suppliers.city powers the Day 9 "products supplied by Delhi suppliers" scenario.
 INSERT INTO Suppliers VALUES
-(1,'TechWorld','9991111111'),
-(2,'HomeEssentials','9991111112'),
-(3,'FashionHub','9991111113'),
-(4,'FreshFoods','9991111114'),
-(5,'OfficeMart','9991111115'),
-(6,'Global Suppliers','9991111116'),
-(7,'Future Electronics','9991111117'),
-(8,'Dream Traders','9991111118');
+(1,'TechWorld','9991111111','Delhi'),
+(2,'HomeEssentials','9991111112','Mumbai'),
+(3,'FashionHub','9991111113','Delhi'),
+(4,'FreshFoods','9991111114','Pune'),
+(5,'OfficeMart','9991111115','Delhi'),
+(6,'Global Suppliers','9991111116','Bangalore'),
+(7,'Future Electronics','9991111117','Delhi'),
+(8,'Dream Traders','9991111118','Chandigarh');
 
 INSERT INTO Products VALUES
 (201,'Laptop','Electronics',55000,1),
@@ -89,10 +100,22 @@ INSERT INTO Products VALUES
 (214,'Bookshelf','Furniture',6500,2),
 (215,'Pen Drive','Electronics',800,1);
 
+-- Orders.order_date powers the Day 9 "latest order" scenario. Dates follow the
+-- same sequence the order_ids were assigned in (1001 = earliest, 1012 = most
+-- recent), so "latest order" resolves exactly as it would with real timestamps.
 INSERT INTO Orders VALUES
-(1001,101),(1002,102),(1003,101),(1004,103),
-(1005,104),(1006,105),(1007,106),(1008,107),
-(1009,108),(1010,109),(1011,105),(1012,110);
+(1001,101,'2026-01-05'),
+(1002,102,'2026-01-07'),
+(1003,101,'2026-01-09'),
+(1004,103,'2026-01-12'),
+(1005,104,'2026-01-15'),
+(1006,105,'2026-01-18'),
+(1007,106,'2026-01-21'),
+(1008,107,'2026-01-24'),
+(1009,108,'2026-01-27'),
+(1010,109,'2026-01-30'),
+(1011,105,'2026-02-02'),
+(1012,110,'2026-02-05');
 
 INSERT INTO OrderDetails VALUES
 (1001,201,1),(1001,202,2),
