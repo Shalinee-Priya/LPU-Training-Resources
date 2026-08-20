@@ -48,6 +48,7 @@ Day_07_Normalization/
 │
 ├── 01_SQL_Day7_Slides.pptx
 ├── 02_SQL_Day7_Script.sql
+├── 03_SQL_Day7_Dataset.sql
 └── README.md
 ```
 
@@ -64,18 +65,35 @@ Day_07_Normalization/
 - **Day 7 → Database Normalization**
 
 ---
-
 ## Business Case Study
 
-A single **OrderData** table stores customer, product, supplier and order information. Through this module, students redesign it into:
+This module uses an **E-commerce OrderData** dataset stored in `03_SQL_Day7_Dataset.sql`.
 
-- Customers
-- Suppliers
-- Products
-- Orders
-- OrderDetails
+The unnormalized table intentionally contains repeated customer, supplier, and product information to demonstrate:
 
-This mirrors how real e-commerce databases are designed. <FileCite ref_id="turn26file0" line_range_start=11 line_range_end=81/>
+- Data Redundancy
+- Update Anomaly
+- Insert Anomaly
+- Delete Anomaly
+- Transformation from **UNF → 1NF → 2NF → 3NF**
+
+Students progressively redesign this single table into a clean relational database, making it the perfect bridge to **Day 8: SQL JOINS**.
+---
+
+---
+
+## Practical Learning
+
+This module includes:
+
+- Premium 10-slide classroom presentation
+- Reusable UNF E-commerce SQL dataset (`03_SQL_Day7_Dataset.sql`)
+- Executable MySQL 8 normalization script
+- Step-by-step UNF → 1NF → 2NF → 3NF transformation
+- Data Redundancy and Anomaly demonstrations
+- Practical normalization lab activities
+- Business design exercises
+- 20 interview-oriented questions
 
 ---
 
