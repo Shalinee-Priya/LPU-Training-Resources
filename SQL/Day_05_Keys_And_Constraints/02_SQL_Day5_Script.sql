@@ -54,9 +54,6 @@ CREATE TABLE students (
     cgpa        DECIMAL(3,2)
 ) ENGINE = InnoDB;
 
--- Verify table structure
-DESC students;
-
 -- ---------------------------------------------------------------------------
 -- 3.1  Successful insert -- each student_id is unique, so both rows succeed
 -- ---------------------------------------------------------------------------
@@ -93,9 +90,6 @@ CREATE TABLE users (
     name     VARCHAR(50) NOT NULL,
     phone    VARCHAR(15) UNIQUE
 ) ENGINE = InnoDB;
-
--- Verify table structure
-DESC users;
 
 -- ---------------------------------------------------------------------------
 -- 4.1  Successful inserts -- distinct email, distinct phone, name provided
@@ -143,9 +137,6 @@ CREATE TABLE attendance (
     attendance_pct INT DEFAULT 75
 ) ENGINE = InnoDB;
 
--- Verify table structure
-DESC attendance;
-
 -- ---------------------------------------------------------------------------
 -- 5.1  Insert WITH attendance specified -- the given value overrides DEFAULT
 -- ---------------------------------------------------------------------------
@@ -177,9 +168,6 @@ CREATE TABLE employees (
     emp_name    VARCHAR(50) NOT NULL,
     department  VARCHAR(30)
 ) ENGINE = InnoDB;
-
--- Verify table structure
-DESC employees;
 
 -- ---------------------------------------------------------------------------
 -- 6.1  Insert 5 employees WITHOUT specifying emp_id
@@ -214,9 +202,6 @@ CREATE TABLE departments (
     dept_id    INT PRIMARY KEY,
     dept_name  VARCHAR(50) NOT NULL
 ) ENGINE = InnoDB;
-
--- Verify table structure
-DESC departments;
 
 DROP TABLE IF EXISTS students;
 
@@ -386,5 +371,258 @@ SELECT * FROM students;
 
 
 -- ============================================================================
--- END OF SQL DAY 5 SCRIPT
+-- SECTION 11: OUTPUT PREDICTION & DEBUGGING (INTERVIEW PRACTICE)
+-- ============================================================================
+-- This section trains you to think like an interview candidate, not just a
+-- query writer. For every question below:
+--
+--   1. Read the query.
+--   2. Predict Success or Error.
+--   3. Identify the exact Key or Constraint responsible.
+--   4. Uncomment and execute in MySQL Workbench to verify.
+--
+-- All 15 challenges below run against the SAME "college_constraints_db"
+-- database and the SAME students / users / attendance / employees /
+-- departments tables built in Sections 3-7 -- no new database is created.
+-- ============================================================================
+
+-- ---------------------------------------------------------------------------
+-- 11.0  Setup -- a few extra columns and one extra table
+--
+-- Sections 3-7 did not need CHECK constraints or a composite-key table, so
+-- we extend the EXISTING Day 5 tables here (ALTER TABLE, not DROP/CREATE)
+-- to unlock the CHECK, DEFAULT and Composite Primary Key challenges below.
+-- Nothing already covered in Sections 3-10 is changed or removed.
+-- ---------------------------------------------------------------------------
+
+-- students: add age / cgpa / city so we can practice CHECK and DEFAULT
+ALTER TABLE students
+    ADD COLUMN age  INT CHECK (age >= 18),
+    ADD COLUMN cgpa DECIMAL(4,2) CHECK (cgpa <= 10.00),
+    ADD COLUMN city VARCHAR(50) DEFAULT 'Delhi';
+
+-- employees: add salary so we can practice CHECK on a positive-only value
+ALTER TABLE employees
+    ADD COLUMN salary DECIMAL(10,2) CHECK (salary > 0);
+
+-- attendance: add a range CHECK on the existing attendance_pct column
+ALTER TABLE attendance
+    ADD CONSTRAINT chk_attendance_pct CHECK (attendance_pct BETWEEN 0 AND 100);
+
+-- student_courses: a new table (does not conflict with any existing table)
+-- built specifically to demonstrate a COMPOSITE PRIMARY KEY -- a student can
+-- enrol in many courses, and a course can have many students, but the SAME
+-- student cannot enrol in the SAME course twice.
+CREATE TABLE student_courses (
+    student_id  INT,
+    course_id   VARCHAR(20),
+    enrolled_on DATE,
+    PRIMARY KEY (student_id, course_id),
+    FOREIGN KEY (student_id) REFERENCES students(student_id)
+) ENGINE = InnoDB;
+
+INSERT INTO student_courses VALUES (101, 'SQL101', '2026-07-01');
+
+SELECT * FROM students;
+SELECT * FROM employees;
+SELECT * FROM attendance;
+SELECT * FROM student_courses;
+
+
+-- ----------------------------------------------------------------------------
+-- Question 1 : PRIMARY KEY
+-- Predict before execution:
+-- • Success or Error?
+-- • Which constraint is responsible?
+-- ----------------------------------------------------------------------------
+-- INSERT INTO students (student_id, name, dept_id)
+-- VALUES (103, 'Kabir', 1);
+
+-- ----------------------------------------------------------------------------
+-- Question 2 : PRIMARY KEY
+-- Predict before execution:
+-- • Success or Error?
+-- • Which constraint is responsible?
+-- ----------------------------------------------------------------------------
+-- INSERT INTO students (student_id, name, dept_id)
+-- VALUES (101, 'Zoya', 2);
+
+-- ----------------------------------------------------------------------------
+-- Question 3 : NOT NULL
+-- Predict before execution:
+-- • Success or Error?
+-- • Which constraint is responsible?
+-- ----------------------------------------------------------------------------
+-- INSERT INTO users (user_id, email, name, phone)
+-- VALUES (3, 'kabir@college.edu', NULL, '9990006666');
+
+-- ----------------------------------------------------------------------------
+-- Question 4 : UNIQUE
+-- Predict before execution:
+-- • Success or Error?
+-- • Which constraint is responsible?
+-- ----------------------------------------------------------------------------
+-- INSERT INTO users (user_id, email, name, phone)
+-- VALUES (3, 'diya@college.edu', 'Kabir', '9990007777');
+
+-- ----------------------------------------------------------------------------
+-- Question 5 : UNIQUE
+-- Predict before execution:
+-- • Success or Error?
+-- • Which column -- email or phone -- causes it, and why?
+-- ----------------------------------------------------------------------------
+-- INSERT INTO users (user_id, email, name, phone)
+-- VALUES (4, 'zoya@college.edu', 'Zoya', '9990001111');
+
+-- ----------------------------------------------------------------------------
+-- Question 6 : CHECK
+-- Predict before execution:
+-- • Success or Error?
+-- • Which constraint is responsible?
+-- ----------------------------------------------------------------------------
+-- INSERT INTO students (student_id, name, dept_id, age)
+-- VALUES (104, 'Ishaan', 1, 16);
+
+-- ----------------------------------------------------------------------------
+-- Question 7 : CHECK
+-- Predict before execution:
+-- • Success or Error?
+-- • Which constraint is responsible?
+-- ----------------------------------------------------------------------------
+-- INSERT INTO students (student_id, name, dept_id, cgpa)
+-- VALUES (105, 'Priya', 2, 11.50);
+
+-- ----------------------------------------------------------------------------
+-- Question 8 : CHECK
+-- Predict before execution:
+-- • Success or Error?
+-- • Which constraint is responsible?
+-- ----------------------------------------------------------------------------
+-- INSERT INTO employees (emp_name, department, salary)
+-- VALUES ('Fatima', 'IT', -5000);
+
+-- ----------------------------------------------------------------------------
+-- Question 9 : CHECK
+-- Predict before execution:
+-- • Success or Error?
+-- • Which constraint is responsible?
+-- ----------------------------------------------------------------------------
+-- INSERT INTO attendance (attendance_id, student_name, attendance_pct)
+-- VALUES (3, 'Kabir', 105);
+
+-- ----------------------------------------------------------------------------
+-- Question 10 : DEFAULT
+-- Predict before execution:
+-- • Will this query execute?
+-- • What value will be stored in the city column?
+-- ----------------------------------------------------------------------------
+-- INSERT INTO students (student_id, name, dept_id, age, cgpa)
+-- VALUES (107, 'Naveen', 2, 21, 8.40);
+
+-- ----------------------------------------------------------------------------
+-- Question 11 : COMPOSITE PRIMARY KEY
+-- Predict before execution:
+-- • Success or Error?
+-- • student_courses already holds the row (101, 'SQL101', '2026-07-01') --
+--   does a different enrolled_on date save this second row from a
+--   duplicate-key violation?
+-- ----------------------------------------------------------------------------
+-- INSERT INTO student_courses
+-- VALUES (101, 'SQL101', '2026-07-02');
+
+-- ----------------------------------------------------------------------------
+-- Question 12 : FOREIGN KEY
+-- Predict before execution:
+-- • Which of the two statements below will fail?
+-- • Which constraint is responsible, and why does the other one succeed?
+-- ----------------------------------------------------------------------------
+-- INSERT INTO students (student_id, name, dept_id)
+-- VALUES (108, 'Farhan', 1);
+--
+-- INSERT INTO students (student_id, name, dept_id)
+-- VALUES (109, 'Sana', 77);
+
+-- ----------------------------------------------------------------------------
+-- Question 13 : AUTO_INCREMENT
+-- Predict before execution:
+-- • employees currently holds emp_id values 1-5 (Section 6).
+-- • After deleting emp_id 3 and inserting a new employee, what emp_id will
+--   the new row receive?
+-- • Does MySQL reuse a deleted AUTO_INCREMENT value, or always move forward?
+-- ----------------------------------------------------------------------------
+-- DELETE FROM employees WHERE emp_id = 3;
+--
+-- INSERT INTO employees (emp_name, department)
+-- VALUES ('Naina', 'IT');
+
+-- ----------------------------------------------------------------------------
+-- Question 14 : MIXED CONSTRAINT CHALLENGE
+-- Predict before execution:
+-- • This single INSERT breaks more than one rule at once.
+-- • List EVERY constraint this row violates (MySQL will only report the
+--   first one it reaches -- your job is to spot all of them by reading the
+--   table definition, not just the one error message).
+-- ----------------------------------------------------------------------------
+-- INSERT INTO students (student_id, name, dept_id, age, cgpa)
+-- VALUES (101, NULL, 99, 15, 12.50);
+--
+-- Hint -- check every column against the students definition:
+--   student_id 101 ................ already used by 'Aarav' (Section 3)
+--   name       NULL ................ name is NOT NULL
+--   dept_id    99 ................... no department 99 exists
+--   age        15 .................... age must be >= 18
+--   cgpa       12.50 ................. cgpa must be <= 10.00
+
+-- ----------------------------------------------------------------------------
+-- Question 15 : CHALLENGE QUESTION
+-- The students table (as extended in this section) now looks like this:
+--
+--   student_id  INT            PRIMARY KEY
+--   name        VARCHAR(50)    NOT NULL
+--   dept_id     INT            FOREIGN KEY REFERENCES departments(dept_id)
+--   age         INT            CHECK (age >= 18)
+--   cgpa        DECIMAL(4,2)   CHECK (cgpa <= 10.00)
+--   city        VARCHAR(50)    DEFAULT 'Delhi'
+--
+-- Existing rows include student_id 101 and 102; departments 1 and 2 exist.
+--
+-- For EACH statement below, predict Success or Error. If Error, name the
+-- exact constraint responsible.
+-- ----------------------------------------------------------------------------
+-- A)
+-- INSERT INTO students (student_id, name, dept_id, age, cgpa)
+-- VALUES (110, 'Ankit', 1, 22, 8.20);
+--
+-- B)
+-- INSERT INTO students (student_id, name, dept_id, age, cgpa)
+-- VALUES (111, 'Ankit', 1, 16, 8.20);
+--
+-- C)
+-- INSERT INTO students (student_id, name, dept_id, age, cgpa)
+-- VALUES (112, 'Rehan', 5, 22, 8.20);
+--
+-- D)
+-- INSERT INTO students (student_id, name, dept_id, age, cgpa)
+-- VALUES (113, NULL, 1, 22, 8.20);
+
+-- No solutions are provided above -- verify each prediction yourself in
+-- MySQL Workbench before moving on.
+
+
+-- ============================================================================
+-- END OF DAY 5
+--
+-- Skills Mastered:
+-- ✔ PRIMARY KEY
+-- ✔ FOREIGN KEY
+-- ✔ UNIQUE
+-- ✔ NOT NULL
+-- ✔ DEFAULT
+-- ✔ CHECK
+-- ✔ AUTO_INCREMENT
+-- ✔ Constraint Violations
+-- ✔ Output Prediction
+-- ✔ Interview Debugging
+--
+-- Next Module: ER Model & Database Design
 -- ============================================================================
