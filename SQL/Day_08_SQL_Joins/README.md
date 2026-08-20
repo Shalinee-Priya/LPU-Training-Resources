@@ -55,7 +55,9 @@ Day_08_SQL_Joins/
 │
 ├── 01_SQL_Day8_Slides.pptx
 ├── 02_SQL_Day8_Script.sql
+├── 03_SQL_Day8_Dataset.sql
 └── README.md
+```
 ```
 
 ---
@@ -110,16 +112,16 @@ Using SQL JOINs, these normalized tables are combined to generate complete busin
 
 ## Practical Learning
 
-The SQL script includes:
+This module includes:
 
-- Progressive JOIN demonstrations
-- Schema verification (`DESC`)
-- Relationship verification
+- Premium 10-slide classroom presentation
+- Reusable E-commerce SQL dataset (`03_SQL_Day8_Dataset.sql`)
+- Executable MySQL 8 script with complete JOIN demonstrations
+- Schema verification and relationship validation
 - INNER, LEFT, RIGHT, FULL & CROSS JOIN examples
-- Business-first reporting scenarios
-- 50 practice questions (Easy → Advanced)
-- Common debugging mistakes
-- 20 interview questions
+- Multi-table business reports (Invoice, Warehouse, Finance & CEO)
+- 50 business practice questions (Easy → Advanced)
+- Common debugging scenarios and 20 interview questions
 
 ---
 
